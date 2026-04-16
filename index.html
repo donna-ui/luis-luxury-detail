@@ -57,7 +57,7 @@ html,body{background-color:#07070B!important;color:#EDE9E0!important}
   --container:min(1200px,90vw);
 }
 
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gunmetal) var(--void)}
+html{scrollbar-width:thin;scrollbar-color:var(--gunmetal) var(--void)}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--void)}
 ::-webkit-scrollbar-thumb{background:var(--gunmetal);border-radius:3px}
@@ -153,7 +153,7 @@ p{text-wrap:pretty;line-height:1.75}
 .marquee-row{overflow:hidden;padding:0.25rem 0}
 
 /* ===== SECTION DEFAULTS ===== */
-.section{position:relative;padding:var(--section-pad) 0;overflow:hidden}
+.section{position:relative;padding:var(--section-pad) 0}
 .section__inner{max-width:var(--container);margin:0 auto;padding:0 1.5rem}
 .section-label{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
 .section-heading{font-size:clamp(2rem,4.5vw,4rem);line-height:1.05;letter-spacing:-0.01em;margin-bottom:1.5rem}
@@ -171,7 +171,7 @@ p{text-wrap:pretty;line-height:1.75}
 .surface-el.vis{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
 
 /* ===== PROBLEM SECTION ===== */
-.problem{background:var(--obsidian)}
+.problem{background:var(--obsidian);overflow:visible}
 .problem__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .problem__sticky{position:sticky;top:15vh;aspect-ratio:1/1;border-radius:1rem;overflow:hidden;border:1px solid var(--gunmetal);background:var(--graphite)}
 .problem__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s var(--liquid)}
@@ -195,9 +195,9 @@ p{text-wrap:pretty;line-height:1.75}
 .transform__caption p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--silver)}
 
 /* ===== SERVICES (STACKED CARDS) ===== */
-.services{padding-bottom:0}
+.services{padding-bottom:0;overflow:visible}
 .services__inner{max-width:var(--container);margin:0 auto;padding:0 1.5rem}
-.svc-card{position:sticky;top:12vh;background:var(--graphite);border-radius:1.5rem 1.5rem 0 0;padding:clamp(2rem,4vw,3.5rem);min-height:45vh;border:1px solid var(--gunmetal);border-bottom:none;transition:transform 0.1s linear,filter 0.1s linear;will-change:transform,filter}
+.svc-card{position:sticky;top:12vh;background:var(--graphite);border-radius:1.5rem 1.5rem 0 0;padding:clamp(2rem,4vw,3.5rem);min-height:45vh;border:1px solid var(--gunmetal);border-bottom:none;transition:transform 0.3s var(--liquid),filter 0.3s var(--liquid)}
 .svc-card--flagship{background:var(--obsidian);border-color:var(--gold);box-shadow:0 0 40px var(--gold-glow),inset 0 0 40px rgba(212,164,71,0.03)}
 .svc-card__step{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
 .svc-card__name{font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,3rem);margin-bottom:1rem}
@@ -239,7 +239,7 @@ p{text-wrap:pretty;line-height:1.75}
 .protection__fill--ceramic{width:100%;background:var(--gold);box-shadow:0 0 12px var(--gold-glow);animation:barGrow linear both;animation-timeline:view();animation-range:entry 30% entry 80%}
 
 /* ===== WHY LUIS ===== */
-.why{background:var(--void)}
+.why{background:var(--void);overflow:visible}
 .why__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .why__image{position:sticky;top:15vh;border-radius:1rem;overflow:hidden;aspect-ratio:3/4}
 .why__image img{width:100%;height:100%;object-fit:cover}
@@ -495,8 +495,8 @@ p{text-wrap:pretty;line-height:1.75}
 <!-- ===== TRANSFORMATION ===== -->
 <section class="section transform" id="transformation">
   <div class="section__inner" style="text-align:center;margin-bottom:2.5rem">
-    <span class="section-label surface-el">The difference</span>
-    <h2 class="section-heading line-mask"><span>See what correction</span><span>actually looks like.</span></h2>
+    <span class="section-label surface-el">Before & after</span>
+    <h2 class="section-heading line-mask"><span>Same panel.</span><span>Same light. Different hands.</span></h2>
   </div>
   <div class="transform__frame">
     <div class="transform__layer transform__before">
@@ -508,15 +508,15 @@ p{text-wrap:pretty;line-height:1.75}
     </div>
   </div>
   <div class="transform__caption surface-el">
-    <p>One correction. One coat. This is what we do.</p>
+    <p>Same car. Left side: two years of drive-through washes. Right side: Luis.</p>
   </div>
 </section>
 
 <!-- ===== SERVICES ===== -->
 <section class="section services" id="services">
   <div class="services__inner">
-    <span class="section-label surface-el">What we offer</span>
-    <h2 class="section-heading line-mask" style="margin-bottom:3rem"><span>Every detail,</span><span>handled.</span></h2>
+    <span class="section-label surface-el">Services & pricing</span>
+    <h2 class="section-heading line-mask" style="margin-bottom:3rem"><span>From maintenance</span><span>to molecular.</span></h2>
 
     <div class="svc-card" data-svc="0">
       <div class="svc-card__row">
@@ -599,7 +599,7 @@ p{text-wrap:pretty;line-height:1.75}
 <section class="section ceramic" id="ceramic">
   <div class="section__inner">
     <span class="section-label surface-el">Ceramic coating</span>
-    <h2 class="section-heading line-mask"><span>Protection that lasts</span><span>longer than your lease.</span></h2>
+    <h2 class="section-heading line-mask"><span>Five years of armor.</span><span>One appointment.</span></h2>
     <p class="section-body surface-el" style="margin-bottom:3rem">Professional ceramic coating isn't a product you spray on. It's a multi-day process — correction, preparation, application, and cure — performed by trained hands under controlled conditions. Here's exactly what happens to your vehicle.</p>
 
     <div class="ceramic__process">
@@ -635,7 +635,7 @@ p{text-wrap:pretty;line-height:1.75}
 
     <div class="section__inner" style="padding-top:2rem">
       <span class="section-label surface-el">How long does it last?</span>
-      <h3 class="section-heading line-mask" style="font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:2.5rem"><span>Not all protection</span><span>is created equal.</span></h3>
+      <h3 class="section-heading line-mask" style="font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:2.5rem"><span>Wax fades. Sealant wears.</span><span>Ceramic stays.</span></h3>
       <div class="protection">
         <div class="protection__row">
           <div class="protection__label">
@@ -720,7 +720,7 @@ p{text-wrap:pretty;line-height:1.75}
 <section class="section reviews" id="reviews">
   <div class="section__inner" style="text-align:center;margin-bottom:3rem">
     <span class="section-label surface-el">What people say</span>
-    <h2 class="section-heading line-mask"><span>Don't take our word for it.</span></h2>
+    <h2 class="section-heading line-mask"><span>Straight from the driveway.</span></h2>
   </div>
   <div class="reviews__cards">
     <div class="rev-card surface-el">
