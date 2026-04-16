@@ -1,0 +1,368 @@
+<!-- ===== FOOTER.HTML — LUXURY MOBILE DETAIL ===== -->
+<!-- Paste into GHL: Settings → Tracking Code → Footer -->
+
+<!-- Lenis Smooth Scroll -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ===== REDUCED MOTION CHECK ===== */
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===== LENIS SMOOTH SCROLL ===== */
+  var lenis;
+  if (!prefersReduced && window.innerWidth > 768) {
+    lenis = new Lenis({
+      duration: 1.1,
+      easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* ===== CURSOR SPOTLIGHT ===== */
+  var spot = document.getElementById('spotlight');
+  if (spot && window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    var rafSpot = false;
+    document.addEventListener('mousemove', function(e) {
+      if (!rafSpot) {
+        rafSpot = true;
+        requestAnimationFrame(function() {
+          spot.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0) translate(-50%,-50%)';
+          rafSpot = false;
+        });
+      }
+    }, { passive: true });
+  }
+
+  /* ===== HERO OPENING SEQUENCE ===== */
+  var heroLine = document.getElementById('heroLine');
+  var heroContent = document.getElementById('heroContent');
+  var heroImg = document.getElementById('heroImg');
+  var heroOverlay = document.getElementById('heroOverlay');
+  var heroHeadline = document.getElementById('heroHeadline');
+
+  if (!prefersReduced && heroLine) {
+    var heroTL = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      onComplete: function() {
+        /* Clean up overlay after sequence */
+        if (heroOverlay) heroOverlay.style.pointerEvents = 'none';
+      }
+    });
+
+    heroTL
+      /* Gold line draws */
+      .to(heroLine, { width: '60vw', duration: 0.8, ease: 'power2.inOut' })
+      /* Bars split apart */
+      .to('.hero-bar--top', { yPercent: -100, duration: 1.0, ease: 'power3.inOut' }, 0.6)
+      .to('.hero-bar--bottom', { yPercent: 100, duration: 1.0, ease: 'power3.inOut' }, 0.6)
+      /* Gold line fades */
+      .to(heroLine, { opacity: 0, duration: 0.4 }, 1.2)
+      /* Image restores from grayscale */
+      .to(heroImg, {
+        filter: 'grayscale(0) brightness(1) saturate(1.1)',
+        duration: 1.4,
+        ease: 'power2.out'
+      }, 0.8)
+      /* Content surfaces */
+      .to(heroContent, { opacity: 1, duration: 0.01 }, 1.2)
+      /* Headline reveals (line mask) */
+      .add(function() {
+        if (heroHeadline) heroHeadline.classList.add('vis');
+      }, 1.3)
+      /* Sub/location/CTAs surface */
+      .to('.hero-sub', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.6)
+      .to('.hero-location', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.75)
+      .to('.hero-ctas', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.9)
+      /* Overlay bars fully gone */
+      .to(heroOverlay, { autoAlpha: 0, duration: 0.5 }, 2.0);
+
+    /* Hero parallax on scroll */
+    gsap.to(heroImg, {
+      yPercent: 15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    /* Hero content fade on scroll */
+    gsap.to(heroContent, {
+      y: -60,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: '55% top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+  } else {
+    /* Reduced motion: show everything immediately */
+    if (heroContent) heroContent.style.opacity = '1';
+    if (heroImg) heroImg.style.filter = 'none';
+    if (heroOverlay) heroOverlay.style.display = 'none';
+    if (heroHeadline) heroHeadline.classList.add('vis');
+    document.querySelectorAll('.hero .surface-el').forEach(function(el) {
+      el.classList.add('vis');
+    });
+  }
+
+  /* ===== INTERSECTION OBSERVER — SURFACE REVEALS ===== */
+  var surfaceEls = document.querySelectorAll('.surface-el');
+  var lineMasks = document.querySelectorAll('.line-mask:not(#heroHeadline)');
+  var atmosOrbs = document.querySelectorAll('.atmos');
+
+  if (!prefersReduced) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    surfaceEls.forEach(function(el) { revealObserver.observe(el); });
+    lineMasks.forEach(function(el) { revealObserver.observe(el); });
+    atmosOrbs.forEach(function(el) { revealObserver.observe(el); });
+  } else {
+    surfaceEls.forEach(function(el) { el.classList.add('vis'); });
+    lineMasks.forEach(function(el) { el.classList.add('vis'); });
+  }
+
+  /* ===== PROBLEM SECTION — STICKY IMAGE CROSSFADE ===== */
+  var problemItems = document.querySelectorAll('.problem__item');
+  var problemImgs = document.querySelectorAll('.problem__img');
+
+  if (problemItems.length && problemImgs.length) {
+    var problemObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = entry.target.getAttribute('data-trigger');
+          problemImgs.forEach(function(img) { img.classList.remove('active'); });
+          var target = document.querySelector('.problem__img[data-problem="' + idx + '"]');
+          if (target) target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    problemItems.forEach(function(item) { problemObserver.observe(item); });
+  }
+
+  /* ===== SERVICE CARDS — STICKY STACK + 3D TILT ===== */
+  var svcCards = document.querySelectorAll('.svc-card');
+
+  if (!prefersReduced && window.innerWidth > 768 && svcCards.length) {
+    /* Stack scaling via ScrollTrigger */
+    svcCards.forEach(function(card, i) {
+      if (i < svcCards.length - 1) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 12vh',
+          end: 'bottom 12vh',
+          scrub: 1,
+          onUpdate: function(self) {
+            var scale = 1 - (self.progress * 0.04);
+            var blur = self.progress * 1.5;
+            card.style.transform = 'scale(' + scale.toFixed(4) + ')';
+            card.style.filter = 'blur(' + blur.toFixed(2) + 'px)';
+          }
+        });
+      }
+    });
+
+    /* 3D tilt on hover */
+    svcCards.forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (y * -5).toFixed(2) + 'deg) scale3d(1.01,1.01,1)';
+        card.style.transition = 'none';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+        card.style.transition = 'transform 0.6s cubic-bezier(0.22,0.68,0,1)';
+      });
+    });
+  }
+
+  /* ===== COUNTER ANIMATION ===== */
+  var counters = document.querySelectorAll('[data-count]');
+
+  if (counters.length) {
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-count'));
+          var duration = 2000;
+          var start = performance.now();
+
+          function tick(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            /* ease-out cubic */
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased);
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target + '+';
+            }
+          }
+          requestAnimationFrame(tick);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(el) { counterObserver.observe(el); });
+  }
+
+  /* ===== MAGNETIC BUTTONS ===== */
+  if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    document.querySelectorAll('.magnetic').forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - (rect.left + rect.width / 2);
+        var y = e.clientY - (rect.top + rect.height / 2);
+        btn.style.transform = 'translate3d(' + (x * 0.25).toFixed(1) + 'px,' + (y * 0.25).toFixed(1) + 'px,0)';
+        btn.style.transition = 'none';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = 'translate3d(0,0,0)';
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.22,0.68,0,1)';
+      });
+    });
+  }
+
+  /* ===== NAVIGATION SCROLL STATE ===== */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var navObserver = new IntersectionObserver(function(entries) {
+      nav.classList.toggle('scrolled', !entries[0].isIntersecting);
+    }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+    navObserver.observe(document.getElementById('hero') || document.body);
+  }
+
+  /* ===== MOBILE MENU ===== */
+  var burger = document.getElementById('burger');
+  var mobMenu = document.getElementById('mobMenu');
+
+  if (burger && mobMenu) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      mobMenu.classList.toggle('open');
+      document.body.style.overflow = mobMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobMenu.querySelectorAll('.mob-menu__link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        burger.classList.remove('open');
+        mobMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ===== STICKY MOBILE CTA ===== */
+  var stickyCta = document.getElementById('stickyCta');
+  if (stickyCta && window.innerWidth <= 768) {
+    var stickyObserver = new IntersectionObserver(function(entries) {
+      /* Show after scrolling past 50% of the page */
+      if (!entries[0].isIntersecting) {
+        stickyCta.classList.add('show');
+      }
+    }, { threshold: 0 });
+    /* Observe the transformation section as the trigger point */
+    var stickyTrigger = document.getElementById('transformation') || document.getElementById('services');
+    if (stickyTrigger) stickyObserver.observe(stickyTrigger);
+  }
+
+  /* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -80 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+})();
+</script>
+
+<!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Luxury Mobile Detail",
+  "description": "Premium mobile auto detailing, ceramic coating, and paint correction serving Pomona, Corona, and the Inland Empire.",
+  "image": "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "telephone": "+1-909-236-8726",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3816 E Grand Ave",
+    "addressLocality": "Pomona",
+    "addressRegion": "CA",
+    "postalCode": "91766",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0585,
+    "longitude": -117.7098
+  },
+  "url": "https://lmdgroupdetailing.com",
+  "openingHours": "Mo-Su 07:00-19:00",
+  "priceRange": "$$-$$$",
+  "areaServed": [
+    {"@type": "City", "name": "Pomona", "sameAs": "https://en.wikipedia.org/wiki/Pomona,_California"},
+    {"@type": "City", "name": "Corona"},
+    {"@type": "City", "name": "Diamond Bar"},
+    {"@type": "City", "name": "Walnut"},
+    {"@type": "City", "name": "Claremont"},
+    {"@type": "City", "name": "Rancho Cucamonga"},
+    {"@type": "City", "name": "West Covina"},
+    {"@type": "City", "name": "Ontario"},
+    {"@type": "City", "name": "Upland"},
+    {"@type": "City", "name": "Chino Hills"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Detailing Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maintenance Wash"}, "priceSpecification": {"@type": "PriceSpecification", "price": "75", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Detail"}, "priceSpecification": {"@type": "PriceSpecification", "price": "200", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Exterior Detail"}, "priceSpecification": {"@type": "PriceSpecification", "price": "250", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Paint Correction"}, "priceSpecification": {"@type": "PriceSpecification", "price": "400", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ceramic Coating"}, "priceSpecification": {"@type": "PriceSpecification", "price": "800", "priceCurrency": "USD"}}
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5"
+  }
+}
+</script>

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Luxury Mobile Detail | Premium Detailing & Ceramic Coating | Pomona, CA</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Luxury Mobile Detail — premium mobile auto detailing, ceramic coating & paint correction in Pomona, Corona & the Inland Empire. We come to you. Call (909) 236-8726.">
+<meta property="og:title" content="Luxury Mobile Detail | Premium Mobile Detailing & Ceramic Coating">
+<meta property="og:description" content="Expert paint correction, ceramic coating & full detailing delivered to your driveway. Serving Pomona, Corona & the Inland Empire.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GHL DEFAULT OVERRIDE — REQUIRED ===== */
+html,body{background-color:#07070B!important;color:#EDE9E0!important}
+.hl_page-creator--content{background-color:#07070B!important}
+[id^="section"],[class*="hl_"]{background-color:#07070B!important;color:#EDE9E0!important}
+.hl_page-creator--content p,.hl_page-creator--content span,.hl_page-creator--content h1,.hl_page-creator--content h2,.hl_page-creator--content h3,.hl_page-creator--content h4,.hl_page-creator--content a,.hl_page-creator--content li{color:inherit!important}
+.hl_page-creator--content>div,#preview-container,#preview-container>div,[class*="section"],[class*="container"],[class*="wrapper"],[class*="content"]{background-color:transparent!important}
+/* ===== END GHL OVERRIDE ===== */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== @PROPERTY ===== */
+@property --circle-reveal{syntax:"<percentage>";inherits:false;initial-value:0%}
+@property --bar-wax{syntax:"<percentage>";inherits:false;initial-value:0%}
+@property --bar-seal{syntax:"<percentage>";inherits:false;initial-value:0%}
+@property --bar-ceramic{syntax:"<percentage>";inherits:false;initial-value:0%}
+@property --shimmer-x{syntax:"<percentage>";inherits:false;initial-value:-100%}
+
+:root{
+  --void:#07070B;
+  --obsidian:#0E0E16;
+  --graphite:#1A1A24;
+  --gunmetal:#2E2E3A;
+  --pearl:#EDE9E0;
+  --silver:#888894;
+  --gold:#D4A447;
+  --gold-glow:rgba(212,164,71,0.15);
+  --gold-bright:rgba(212,164,71,0.35);
+  --red:#B83A3A;
+
+  --font-display:'Instrument Serif',Georgia,serif;
+  --font-body:'Space Grotesk','Trebuchet MS',sans-serif;
+  --font-mono:'Space Mono','Courier New',monospace;
+
+  --liquid:cubic-bezier(0.22,0.68,0,1);
+  --snap:cubic-bezier(0.16,1,0.3,1);
+
+  --section-pad:clamp(80px,12vh,160px);
+  --container:min(1200px,90vw);
+}
+
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gunmetal) var(--void)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--void)}
+::-webkit-scrollbar-thumb{background:var(--gunmetal);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+body{font-family:var(--font-body);font-weight:300;color:var(--pearl);background:var(--void);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;text-wrap:balance}
+p{text-wrap:pretty;line-height:1.75}
+
+/* ===== GRAIN OVERLAY ===== */
+.grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:0.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;mix-blend-mode:overlay}
+
+/* ===== CURSOR SPOTLIGHT (desktop) ===== */
+.spotlight{position:fixed;width:600px;height:600px;border-radius:50%;pointer-events:none;z-index:9997;background:radial-gradient(circle,rgba(212,164,71,0.06) 0%,transparent 70%);transform:translate(-50%,-50%);will-change:transform;opacity:0;transition:opacity 0.6s}
+@media(pointer:fine){.spotlight{opacity:1}}
+
+/* ===== ATMOSPHERE ORBS ===== */
+.atmos{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);opacity:0;transition:opacity 1.8s var(--liquid)}
+.atmos.vis{opacity:1}
+.atmos--1{width:500px;height:500px;background:rgba(212,164,71,0.04);top:-100px;right:-150px}
+.atmos--2{width:600px;height:600px;background:rgba(212,164,71,0.035);bottom:-200px;left:-200px}
+.atmos--3{width:400px;height:400px;background:rgba(212,164,71,0.04);top:50%;right:-100px}
+
+/* ===== NAVIGATION ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;transition:background 0.5s,padding 0.5s,backdrop-filter 0.5s}
+.nav.scrolled{background:rgba(7,7,11,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0.75rem 0;border-bottom:1px solid rgba(46,46,58,0.4)}
+.nav__inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem}
+.nav__logo{font-family:var(--font-display);font-size:1.25rem;letter-spacing:0.04em;color:var(--pearl)}
+.nav__logo em{color:var(--gold);font-style:normal}
+.nav__links{display:flex;gap:2rem;align-items:center}
+.nav__link{font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);transition:color 0.3s}
+.nav__link:hover{color:var(--pearl)}
+.nav__cta{font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.65rem 1.5rem;border:1px solid var(--gold);color:var(--gold);border-radius:2px;transition:all 0.4s var(--liquid);position:relative;overflow:hidden}
+.nav__cta::before{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform 0.5s var(--snap);z-index:-1}
+.nav__cta:hover::before{transform:scaleX(1);transform-origin:left}
+.nav__cta:hover{color:var(--void)}
+.nav__burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:110}
+.nav__burger span{display:block;width:24px;height:1.5px;background:var(--pearl);transition:all 0.4s var(--liquid)}
+.nav__burger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* ===== MOBILE MENU ===== */
+.mob-menu{position:fixed;inset:0;z-index:105;background:var(--void);clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path 0.6s var(--snap);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
+.mob-menu__link{font-family:var(--font-display);font-size:2rem;color:var(--pearl);opacity:0;transform:translateY(20px);transition:all 0.4s var(--liquid)}
+.mob-menu.open .mob-menu__link{opacity:1;transform:translateY(0)}
+.mob-menu.open .mob-menu__link:nth-child(1){transition-delay:0.15s}
+.mob-menu.open .mob-menu__link:nth-child(2){transition-delay:0.22s}
+.mob-menu.open .mob-menu__link:nth-child(3){transition-delay:0.29s}
+.mob-menu.open .mob-menu__link:nth-child(4){transition-delay:0.36s}
+.mob-menu.open .mob-menu__link:nth-child(5){transition-delay:0.43s}
+.mob-menu__phone{font-family:var(--font-mono);font-size:0.875rem;color:var(--gold);letter-spacing:0.1em;opacity:0;transition:opacity 0.4s 0.5s}
+.mob-menu.open .mob-menu__phone{opacity:1}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--void)}
+.hero-overlay{position:absolute;inset:0;z-index:10;pointer-events:none}
+.hero-bar{position:absolute;left:0;right:0;background:var(--void);z-index:11}
+.hero-bar--top{top:0;height:50%}
+.hero-bar--bottom{bottom:0;height:50%}
+.hero-line{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:0;height:1px;background:var(--gold);z-index:12}
+.hero-bg{position:absolute;inset:0;z-index:1}
+.hero-img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(0.3) saturate(0.2);will-change:filter,transform}
+.hero-content{position:relative;z-index:5;text-align:center;padding:0 1.5rem;max-width:900px;opacity:0}
+.hero-headline{font-size:clamp(3rem,10vw,8.5rem);line-height:0.92;letter-spacing:-0.02em;color:var(--pearl);margin-bottom:1.5rem}
+.hero-headline span{display:block}
+.hero-headline .shimmer{background:linear-gradient(135deg,var(--pearl) 0%,var(--gold) 42%,var(--pearl) 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:textSheen 6s ease-in-out infinite alternate}
+.hero-sub{margin-bottom:0.5rem}
+.hero-location{margin-bottom:2.5rem}
+.mono-label{font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver)}
+.mono-label--sm{font-size:0.625rem;letter-spacing:0.22em}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ===== BUTTONS ===== */
+.btn{font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2.25rem;border-radius:2px;cursor:pointer;transition:all 0.4s var(--liquid);position:relative;overflow:hidden;display:inline-block;border:none}
+.btn--primary{background:var(--gold);color:var(--void)}
+.btn--primary::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:translateX(var(--shimmer-x));animation:shimmerBtn 4s ease-in-out infinite;pointer-events:none}
+.btn--primary:hover{box-shadow:0 0 30px var(--gold-glow),0 0 60px rgba(212,164,71,0.08)}
+.btn--outline{background:transparent;color:var(--pearl);border:1px solid var(--gunmetal);transition:all 0.4s var(--liquid)}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ===== TRUST MARQUEE ===== */
+.marquee-wrap{border-top:1px solid var(--gunmetal);border-bottom:1px solid var(--gunmetal);background:var(--obsidian);padding:0.9rem 0;overflow:hidden;position:relative}
+.marquee-track{display:flex;width:max-content;gap:0}
+.marquee-track--top{animation:marqueeScroll 50s linear infinite}
+.marquee-track--bottom{animation:marqueeScroll 55s linear infinite reverse}
+.marquee-item{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--silver);white-space:nowrap;padding:0 1.5rem}
+.marquee-diamond{color:var(--gold);font-size:0.5rem;padding:0 0.5rem}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+.marquee-row{overflow:hidden;padding:0.25rem 0}
+
+/* ===== SECTION DEFAULTS ===== */
+.section{position:relative;padding:var(--section-pad) 0;overflow:hidden}
+.section__inner{max-width:var(--container);margin:0 auto;padding:0 1.5rem}
+.section-label{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.section-heading{font-size:clamp(2rem,4.5vw,4rem);line-height:1.05;letter-spacing:-0.01em;margin-bottom:1.5rem}
+.section-body{font-size:clamp(0.95rem,1.1vw,1.125rem);color:var(--silver);max-width:560px;line-height:1.75}
+
+/* ===== LINE MASK REVEAL ===== */
+.line-mask{overflow:hidden}
+.line-mask span{display:block;transform:translateY(110%);transition:transform 0.9s var(--snap)}
+.line-mask.vis span{transform:translateY(0)}
+.line-mask.vis span:nth-child(2){transition-delay:0.1s}
+.line-mask.vis span:nth-child(3){transition-delay:0.18s}
+
+/* ===== SURFACE REVEAL ===== */
+.surface-el{opacity:0;transform:translateY(24px) scale(0.985);filter:blur(4px);transition:all 0.8s var(--liquid)}
+.surface-el.vis{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+
+/* ===== PROBLEM SECTION ===== */
+.problem{background:var(--obsidian)}
+.problem__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.problem__sticky{position:sticky;top:15vh;aspect-ratio:1/1;border-radius:1rem;overflow:hidden;border:1px solid var(--gunmetal);background:var(--graphite)}
+.problem__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s var(--liquid)}
+.problem__img.active{opacity:1}
+.problem__items{display:flex;flex-direction:column;gap:3rem;padding:8vh 0}
+.problem__item{padding:2rem 0;border-top:1px solid var(--gunmetal)}
+.problem__name{font-family:var(--font-display);font-size:1.5rem;color:var(--red);margin-bottom:0.75rem}
+.problem__desc{color:var(--silver);line-height:1.7;margin-bottom:0.5rem;font-size:0.95rem}
+.problem__stat{font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gunmetal)}
+
+/* ===== TRANSFORMATION ===== */
+.transform{padding:var(--section-pad) 0}
+.transform__frame{position:relative;width:100%;max-width:1100px;margin:0 auto;aspect-ratio:16/9;border-radius:1rem;overflow:hidden}
+.transform__layer{position:absolute;inset:0}
+.transform__layer img{width:100%;height:100%;object-fit:cover}
+.transform__before img{filter:brightness(0.5) saturate(0.3) contrast(1.1)}
+.transform__after{clip-path:circle(var(--circle-reveal) at 50% 50%);animation:circleGrow linear both;animation-timeline:view();animation-range:entry 10% cover 55%}
+.transform__after img{filter:brightness(1.05) saturate(1.15) contrast(1.05)}
+.transform__ring{position:absolute;inset:0;clip-path:circle(calc(var(--circle-reveal) + 2px) at 50% 50%);background:var(--gold);opacity:0.3;animation:circleGrow linear both;animation-timeline:view();animation-range:entry 10% cover 55%;pointer-events:none;z-index:2}
+.transform__caption{text-align:center;margin-top:2rem;padding:0 1.5rem}
+.transform__caption p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--silver)}
+
+/* ===== SERVICES (STACKED CARDS) ===== */
+.services{padding-bottom:0}
+.services__inner{max-width:var(--container);margin:0 auto;padding:0 1.5rem}
+.svc-card{position:sticky;top:12vh;background:var(--graphite);border-radius:1.5rem 1.5rem 0 0;padding:clamp(2rem,4vw,3.5rem);min-height:45vh;border:1px solid var(--gunmetal);border-bottom:none;transition:transform 0.1s linear,filter 0.1s linear;will-change:transform,filter}
+.svc-card--flagship{background:var(--obsidian);border-color:var(--gold);box-shadow:0 0 40px var(--gold-glow),inset 0 0 40px rgba(212,164,71,0.03)}
+.svc-card__step{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.svc-card__name{font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,3rem);margin-bottom:1rem}
+.svc-card__desc{color:var(--silver);max-width:500px;line-height:1.7;margin-bottom:1.5rem;font-size:0.95rem}
+.svc-card__price{font-family:var(--font-mono);font-size:1.5rem;color:var(--gold);letter-spacing:-0.02em}
+.svc-card__price span{font-size:0.75rem;color:var(--silver);letter-spacing:0.1em}
+.svc-card__row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.svc-card__img{width:40%;max-width:380px;border-radius:0.75rem;overflow:hidden;aspect-ratio:4/3}
+.svc-card__img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--liquid)}
+.svc-card:hover .svc-card__img img{transform:scale(1.04)}
+
+/* ===== INTERSTITIAL ===== */
+.interstitial{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.5rem}
+.interstitial__text{font-family:var(--font-display);font-style:italic;font-size:clamp(1.5rem,3.5vw,3rem);color:var(--pearl);max-width:600px;line-height:1.3}
+
+/* ===== CERAMIC DEEP DIVE ===== */
+.ceramic{background:var(--obsidian)}
+.ceramic__process{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem}
+.process-card{background:var(--graphite);border-radius:1rem;padding:clamp(1.5rem,3vw,2.5rem);position:relative;overflow:hidden;border:1px solid var(--gunmetal)}
+.process-card::before,.process-card::after{content:"";position:absolute;width:24px;height:24px;border-color:var(--gold);border-style:solid}
+.process-card::before{top:12px;left:12px;border-width:1px 0 0 1px}
+.process-card::after{bottom:12px;right:12px;border-width:0 1px 1px 0}
+.process-card__dot-grid{position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(var(--silver) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+.process-card__num{font-family:var(--font-mono);font-size:clamp(3rem,5vw,4.5rem);color:var(--gold);opacity:0.12;position:absolute;top:0.5rem;right:1rem;line-height:1}
+.process-card__name{font-family:var(--font-display);font-size:1.35rem;margin-bottom:0.75rem;position:relative}
+.process-card__desc{color:var(--silver);font-size:0.875rem;line-height:1.7;position:relative}
+.process-card__time{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gunmetal);margin-top:1rem;position:relative}
+
+/* Protection comparison */
+.protection{max-width:700px;margin:0 auto}
+.protection__row{margin-bottom:1.75rem}
+.protection__label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.5rem}
+.protection__name{font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver)}
+.protection__years{font-family:var(--font-mono);font-size:0.6875rem;color:var(--gunmetal)}
+.protection__bar{height:4px;background:var(--gunmetal);border-radius:2px;overflow:hidden}
+.protection__fill{height:100%;border-radius:2px;transform-origin:left;background:var(--silver)}
+.protection__fill--wax{width:12%;animation:barGrow linear both;animation-timeline:view();animation-range:entry 20% entry 70%}
+.protection__fill--seal{width:28%;animation:barGrow linear both;animation-timeline:view();animation-range:entry 25% entry 75%}
+.protection__fill--ceramic{width:100%;background:var(--gold);box-shadow:0 0 12px var(--gold-glow);animation:barGrow linear both;animation-timeline:view();animation-range:entry 30% entry 80%}
+
+/* ===== WHY LUIS ===== */
+.why{background:var(--void)}
+.why__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.why__image{position:sticky;top:15vh;border-radius:1rem;overflow:hidden;aspect-ratio:3/4}
+.why__image img{width:100%;height:100%;object-fit:cover}
+.why__content{padding:4vh 0}
+.why__stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem}
+.stat{text-align:left}
+.stat__number{font-family:var(--font-mono);font-size:clamp(2.5rem,5vw,4rem);color:var(--pearl);letter-spacing:-0.03em;line-height:1}
+.stat__label{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);margin-top:0.25rem}
+.stat--accent .stat__number{color:var(--gold)}
+.why__story{margin-bottom:2.5rem}
+.why__story p{color:var(--silver);line-height:1.8;margin-bottom:1rem}
+.why__list{list-style:none;display:flex;flex-direction:column;gap:0.75rem}
+.why__list li{font-size:0.9rem;color:var(--silver);padding-left:1.5rem;position:relative}
+.why__list li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* ===== REVIEWS ===== */
+.reviews{background:var(--obsidian)}
+.reviews__cards{display:flex;justify-content:center;gap:0;position:relative;perspective:1000px;min-height:340px;max-width:900px;margin:0 auto}
+.rev-card{background:var(--graphite);border:1px solid var(--gunmetal);border-radius:1rem;padding:2rem;width:320px;position:absolute;transition:all 0.5s var(--liquid);cursor:default;transform-style:preserve-3d}
+.rev-card:nth-child(1){z-index:3;transform:translateZ(0) rotate(0deg);left:calc(50% - 160px)}
+.rev-card:nth-child(2){z-index:2;transform:translateZ(-20px) rotate(-2deg);left:calc(50% - 280px);top:20px}
+.rev-card:nth-child(3){z-index:1;transform:translateZ(-40px) rotate(2deg);left:calc(50% - 40px);top:20px}
+.rev-card:hover{transform:translateZ(30px) rotate(0deg) scale(1.02)!important;z-index:10!important;border-color:var(--gold);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.rev-card__stars{color:var(--gold);font-size:0.875rem;margin-bottom:1rem;letter-spacing:0.1em}
+.rev-card__text{font-family:var(--font-display);font-style:italic;font-size:1.05rem;line-height:1.6;color:var(--pearl);margin-bottom:1.25rem}
+.rev-card__author{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver)}
+
+/* ===== CTA SECTION ===== */
+.cta-section{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:var(--section-pad) 1.5rem}
+.cta-section__glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--gold-glow),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:ctaPulse 6s ease-in-out infinite alternate;pointer-events:none}
+.cta-section__label{font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.cta-section__heading{font-size:clamp(2rem,5vw,4.5rem);line-height:1.05;margin-bottom:1rem}
+.cta-section__sub{color:var(--silver);max-width:480px;margin:0 auto 2rem;line-height:1.7}
+.cta-section__phone{font-family:var(--font-mono);font-size:clamp(1.25rem,3vw,2rem);color:var(--gold);letter-spacing:0.05em;margin-bottom:2.5rem;display:block;text-shadow:0 0 10px rgba(212,164,71,0.4),0 0 30px rgba(212,164,71,0.2),0 0 60px rgba(212,164,71,0.1);animation:phoneGlow 3s ease-in-out infinite alternate}
+.cta-section__btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-section__areas{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gunmetal);margin-top:2.5rem}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--obsidian);border-top:1px solid var(--gunmetal);padding:4rem 0 2rem}
+.footer__grid{max-width:var(--container);margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer__col-title{font-family:var(--font-mono);font-size:0.625rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.footer__link{display:block;color:var(--silver);font-size:0.875rem;padding:0.3rem 0;transition:color 0.3s}
+.footer__link:hover{color:var(--pearl)}
+.footer__bottom{max-width:var(--container);margin:0 auto;padding:2rem 1.5rem 0;border-top:1px solid var(--gunmetal);display:flex;justify-content:space-between;align-items:center}
+.footer__copy{font-family:var(--font-mono);font-size:0.5625rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gunmetal)}
+
+/* ===== STICKY MOBILE CTA ===== */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--gold);padding:0.75rem 1.5rem;display:none;gap:0.75rem;transform:translateY(100%);transition:transform 0.5s var(--snap);padding-bottom:calc(0.75rem + env(safe-area-inset-bottom,0))}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta__btn{flex:1;text-align:center;font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem;border-radius:2px;font-weight:700}
+.sticky-cta__btn--book{background:var(--void);color:var(--gold)}
+.sticky-cta__btn--call{background:transparent;color:var(--void);border:1px solid var(--void)}
+
+/* ===== KEYFRAMES ===== */
+@keyframes textSheen{to{background-position:200% center}}
+@keyframes shimmerBtn{0%,100%{--shimmer-x:-100%}50%{--shimmer-x:200%}}
+@keyframes circleGrow{to{--circle-reveal:80%}}
+@keyframes barGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes marqueeScroll{to{transform:translateX(-50%)}}
+@keyframes ctaPulse{from{transform:translate(-50%,-50%) scale(1);opacity:0.6}to{transform:translate(-50%,-50%) scale(1.12);opacity:1}}
+@keyframes phoneGlow{from{text-shadow:0 0 10px rgba(212,164,71,0.3),0 0 30px rgba(212,164,71,0.15)}to{text-shadow:0 0 10px rgba(212,164,71,0.6),0 0 30px rgba(212,164,71,0.3),0 0 60px rgba(212,164,71,0.12)}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .problem__grid,.why__grid{grid-template-columns:1fr}
+  .problem__sticky,.why__image{position:relative;top:auto;max-height:50vh}
+  .ceramic__process{grid-template-columns:1fr}
+  .svc-card__row{flex-direction:column}
+  .svc-card__img{width:100%;max-width:100%}
+}
+@media(max-width:768px){
+  .nav__links{display:none}
+  .nav__burger{display:flex}
+  .svc-card{position:relative!important;top:auto!important;min-height:auto;transform:none!important;filter:none!important}
+  .reviews__cards{flex-direction:column;align-items:center;gap:1rem;min-height:auto;perspective:none}
+  .rev-card{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:100%;max-width:400px}
+  .rev-card:hover{transform:translateY(-4px)!important}
+  .footer__grid{grid-template-columns:1fr}
+  .sticky-cta{display:flex}
+  .hero-headline{font-size:clamp(2.5rem,12vw,4.5rem)}
+  .section-heading{font-size:clamp(1.75rem,6vw,2.5rem)}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:300px;text-align:center}
+}
+@media(max-width:480px){
+  .why__stats{grid-template-columns:1fr}
+  .process-card{padding:1.25rem}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+  .hero-bar--top,.hero-bar--bottom,.hero-line{display:none}
+  .hero-content{opacity:1!important}
+  .hero-img{filter:none!important}
+  .line-mask span{transform:none!important}
+  .surface-el{opacity:1!important;transform:none!important;filter:none!important}
+  .marquee-track{animation:none!important}
+  .spotlight{display:none}
+  .transform__after{clip-path:circle(80% at 50% 50%)}
+  .atmos{opacity:0!important}
+  .sticky-cta{transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+<!-- Cursor spotlight (desktop) -->
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo"><em>Luxury</em> Mobile Detail</a>
+    <div class="nav__links">
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#ceramic" class="nav__link">Ceramic Coating</a>
+      <a href="#why" class="nav__link">About</a>
+      <a href="#reviews" class="nav__link">Reviews</a>
+      <a href="#contact" class="nav__cta">Get a Quote</a>
+    </div>
+    <div class="nav__burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" class="mob-menu__link">Services</a>
+  <a href="#ceramic" class="mob-menu__link">Ceramic Coating</a>
+  <a href="#why" class="mob-menu__link">About</a>
+  <a href="#reviews" class="mob-menu__link">Reviews</a>
+  <a href="#contact" class="mob-menu__link">Get a Quote</a>
+  <a href="tel:+19092368726" class="mob-menu__phone">(909) 236-8726</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-overlay" id="heroOverlay" aria-hidden="true">
+    <div class="hero-bar hero-bar--top"></div>
+    <div class="hero-bar hero-bar--bottom"></div>
+    <div class="hero-line" id="heroLine"></div>
+  </div>
+  <div class="hero-bg">
+    <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Black luxury vehicle under studio lighting" class="hero-img" id="heroImg" fetchpriority="high">
+  </div>
+  <div class="hero-content" id="heroContent">
+    <h1 class="hero-headline line-mask" id="heroHeadline">
+      <span class="shimmer">perfection,</span>
+      <span>delivered.</span>
+    </h1>
+    <div class="hero-sub surface-el">
+      <span class="mono-label">luxury mobile detailing & ceramic coating</span>
+    </div>
+    <div class="hero-location surface-el">
+      <span class="mono-label mono-label--sm">pomona · corona · inland empire</span>
+    </div>
+    <div class="hero-ctas surface-el">
+      <a href="#contact" class="btn btn--primary magnetic">Book Your Detail</a>
+      <a href="#services" class="btn btn--outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST MARQUEE ===== -->
+<div class="marquee-wrap">
+  <div class="marquee-row">
+    <div class="marquee-track marquee-track--top">
+      <span class="marquee-item">10+ Years Experience</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Ceramic Coating Specialist</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">System X Trained</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">500+ Vehicles Detailed</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">5-Star Rated</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Mobile — We Come to You</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">10+ Years Experience</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Ceramic Coating Specialist</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">System X Trained</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">500+ Vehicles Detailed</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">5-Star Rated</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Mobile — We Come to You</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+    </div>
+  </div>
+  <div class="marquee-row">
+    <div class="marquee-track marquee-track--bottom">
+      <span class="marquee-item">Pomona</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Corona</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Diamond Bar</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Walnut</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Claremont</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Rancho Cucamonga</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">West Covina</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Ontario</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Upland</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Chino Hills</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Pomona</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Corona</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Diamond Bar</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Walnut</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Claremont</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Rancho Cucamonga</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">West Covina</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Ontario</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Upland</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+      <span class="marquee-item">Chino Hills</span><span class="marquee-diamond" aria-hidden="true">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== THE PROBLEM ===== -->
+<section class="section problem" id="problem">
+  <div class="section__inner">
+    <span class="section-label surface-el">The truth about your paint</span>
+    <h2 class="section-heading line-mask"><span>What's hiding</span><span>beneath the surface.</span></h2>
+  </div>
+  <div class="section__inner" style="margin-top:3rem">
+    <div class="problem__grid">
+      <div class="problem__sticky">
+        <img src="https://images.pexels.com/photos/8664307/pexels-photo-8664307.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Close-up of vehicle paint surface showing swirl marks" class="problem__img active" data-problem="0">
+        <img src="https://images.pexels.com/photos/29527919/pexels-photo-29527919.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Water spots etched into vehicle clearcoat" class="problem__img" data-problem="1">
+        <img src="https://images.pexels.com/photos/4141873/pexels-photo-4141873.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Oxidized and faded vehicle paint" class="problem__img" data-problem="2">
+        <img src="https://images.pexels.com/photos/4141987/pexels-photo-4141987.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Scratches and chips on vehicle surface" class="problem__img" data-problem="3">
+        <div class="atmos atmos--1" aria-hidden="true"></div>
+      </div>
+      <div class="problem__items">
+        <div class="problem__item surface-el" data-trigger="0">
+          <h3 class="problem__name">Swirl Marks</h3>
+          <p class="problem__desc">Every automated car wash, every dry wipe, every untrained hand leaves circular scratches in your clearcoat. Under direct light, your paint looks like a spiderweb. Most owners don't notice until someone shows them.</p>
+          <span class="problem__stat">Affects 95% of vehicles over 1 year old</span>
+        </div>
+        <div class="problem__item surface-el" data-trigger="1">
+          <h3 class="problem__name">Water Spots</h3>
+          <p class="problem__desc">Mineral deposits from hard water, sprinklers, and rain etch into your clearcoat over time. Left untreated, they bond permanently — no amount of washing removes them. The Inland Empire's hard water makes this worse.</p>
+          <span class="problem__stat">Permanent etching begins within 48 hours</span>
+        </div>
+        <div class="problem__item surface-el" data-trigger="2">
+          <h3 class="problem__name">Oxidation</h3>
+          <p class="problem__desc">Southern California's UV exposure is relentless. Without protection, your clearcoat breaks down molecule by molecule — paint fades, loses depth, turns chalky. The sun doesn't stop working on your paint just because you parked in shade.</p>
+          <span class="problem__stat">UV damage accelerates 3x without coating protection</span>
+        </div>
+        <div class="problem__item surface-el" data-trigger="3">
+          <h3 class="problem__name">Road Damage</h3>
+          <p class="problem__desc">The 10, the 60, the 71 — every mile on IE freeways launches micro-debris at your paint. Rock chips, tar, brake dust, industrial fallout. Each one is a breach in your clearcoat that spreads if left unaddressed.</p>
+          <span class="problem__stat">Average vehicle sustains 200+ micro-impacts per year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSFORMATION ===== -->
+<section class="section transform" id="transformation">
+  <div class="section__inner" style="text-align:center;margin-bottom:2.5rem">
+    <span class="section-label surface-el">The difference</span>
+    <h2 class="section-heading line-mask"><span>See what correction</span><span>actually looks like.</span></h2>
+  </div>
+  <div class="transform__frame">
+    <div class="transform__layer transform__before">
+      <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Vehicle paint before correction — swirls and scratches visible" loading="lazy" decoding="async">
+    </div>
+    <div class="transform__ring" aria-hidden="true"></div>
+    <div class="transform__layer transform__after">
+      <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Vehicle paint after correction and ceramic coating — mirror finish" loading="lazy" decoding="async">
+    </div>
+  </div>
+  <div class="transform__caption surface-el">
+    <p>One correction. One coat. This is what we do.</p>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="services">
+  <div class="services__inner">
+    <span class="section-label surface-el">What we offer</span>
+    <h2 class="section-heading line-mask" style="margin-bottom:3rem"><span>Every detail,</span><span>handled.</span></h2>
+
+    <div class="svc-card" data-svc="0">
+      <div class="svc-card__row">
+        <div>
+          <span class="svc-card__step">01 — Maintenance</span>
+          <h3 class="svc-card__name">Maintenance Wash</h3>
+          <p class="svc-card__desc">Gentle hand wash for coated vehicles. pH-neutral foam, microfiber-only contact, filtered water rinse. Keeps your coating performing at peak hydrophobicity between full details.</p>
+          <div class="svc-card__price">$75+ <span>based on vehicle size</span></div>
+        </div>
+        <div class="svc-card__img">
+          <img src="https://images.pexels.com/photos/7762718/pexels-photo-7762718.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pristine white leather interior after maintenance" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card" data-svc="1">
+      <div class="svc-card__row">
+        <div>
+          <span class="svc-card__step">02 — Interior</span>
+          <h3 class="svc-card__name">Interior Detail</h3>
+          <p class="svc-card__desc">Hot water extraction on carpets and fabric. Leather cleaned, conditioned, and UV-protected. Steam treatment on every surface. Ozone treatment for embedded odors. Your cabin, restored to new.</p>
+          <div class="svc-card__price">$200+ <span>based on condition</span></div>
+        </div>
+        <div class="svc-card__img">
+          <img src="https://images.pexels.com/photos/5288724/pexels-photo-5288724.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Clean luxury car interior detail" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card" data-svc="2">
+      <div class="svc-card__row">
+        <div>
+          <span class="svc-card__step">03 — Exterior</span>
+          <h3 class="svc-card__name">Exterior Detail</h3>
+          <p class="svc-card__desc">Full decontamination wash, iron fallout removal, clay bar treatment, one-step polish, and sealant application. Wheels deep-cleaned, tires dressed, glass polished. Every surface addressed.</p>
+          <div class="svc-card__price">$250+ <span>based on vehicle size</span></div>
+        </div>
+        <div class="svc-card__img">
+          <img src="https://images.pexels.com/photos/29527919/pexels-photo-29527919.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gleaming black luxury vehicle rear view" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card" data-svc="3">
+      <div class="svc-card__row">
+        <div>
+          <span class="svc-card__step">04 — Correction</span>
+          <h3 class="svc-card__name">Paint Correction</h3>
+          <p class="svc-card__desc">Multi-stage compound and polish under LED inspection lighting. We remove swirl marks, scratches, water spots, and oxidation at the molecular level. Single-stage to multi-stage options depending on severity. This is where the magic happens.</p>
+          <div class="svc-card__price">$400+ <span>based on paint condition & stages</span></div>
+        </div>
+        <div class="svc-card__img">
+          <img src="https://images.pexels.com/photos/4141873/pexels-photo-4141873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Paint correction work in progress under inspection light" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card svc-card--flagship" data-svc="4">
+      <div class="svc-card__row">
+        <div>
+          <span class="svc-card__step">05 — The Flagship</span>
+          <h3 class="svc-card__name">Ceramic Coating</h3>
+          <p class="svc-card__desc">Full paint correction followed by professional-grade System X ceramic coating, applied panel by panel in controlled conditions. 5+ years of protection. Insane gloss. Hydrophobic surface that repels water, dirt, and UV damage. The same coatings used by Southern California's top ceramic facilities — now delivered to your driveway.</p>
+          <div class="svc-card__price">$800+ <span>correction + coating package</span></div>
+        </div>
+        <div class="svc-card__img">
+          <img src="https://images.pexels.com/photos/30394821/pexels-photo-30394821.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Flawless ceramic coated surface with deep reflections" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERSTITIAL ===== -->
+<section class="interstitial">
+  <p class="interstitial__text surface-el">your paint remembers everything.</p>
+</section>
+
+<!-- ===== CERAMIC DEEP DIVE ===== -->
+<section class="section ceramic" id="ceramic">
+  <div class="section__inner">
+    <span class="section-label surface-el">Ceramic coating</span>
+    <h2 class="section-heading line-mask"><span>Protection that lasts</span><span>longer than your lease.</span></h2>
+    <p class="section-body surface-el" style="margin-bottom:3rem">Professional ceramic coating isn't a product you spray on. It's a multi-day process — correction, preparation, application, and cure — performed by trained hands under controlled conditions. Here's exactly what happens to your vehicle.</p>
+
+    <div class="ceramic__process">
+      <div class="process-card surface-el">
+        <div class="process-card__dot-grid" aria-hidden="true"></div>
+        <span class="process-card__num" aria-hidden="true">01</span>
+        <h3 class="process-card__name">Decontamination</h3>
+        <p class="process-card__desc">Iron fallout removal with pH-neutral decontaminant. Clay bar treatment to pull embedded contaminants from the clearcoat. Chemical and mechanical prep — nothing gets coated until the surface is clinically clean.</p>
+        <span class="process-card__time">1–2 hours</span>
+      </div>
+      <div class="process-card surface-el">
+        <div class="process-card__dot-grid" aria-hidden="true"></div>
+        <span class="process-card__num" aria-hidden="true">02</span>
+        <h3 class="process-card__name">Paint Correction</h3>
+        <p class="process-card__desc">Multi-stage compound and polish under 4,000-lumen LED inspection panels. Every swirl, scratch, and defect removed before a single drop of coating touches the surface. This step alone takes the longest — and makes the biggest difference.</p>
+        <span class="process-card__time">3–6 hours</span>
+      </div>
+      <div class="process-card surface-el">
+        <div class="process-card__dot-grid" aria-hidden="true"></div>
+        <span class="process-card__num" aria-hidden="true">03</span>
+        <h3 class="process-card__name">Coating Application</h3>
+        <p class="process-card__desc">System X professional-grade ceramic coating applied panel by panel with controlled crosshatch technique. Each layer bonds at the molecular level to your clearcoat, creating a 9H-rated glass-like shell that nothing penetrates.</p>
+        <span class="process-card__time">2–3 hours</span>
+      </div>
+      <div class="process-card surface-el">
+        <div class="process-card__dot-grid" aria-hidden="true"></div>
+        <span class="process-card__num" aria-hidden="true">04</span>
+        <h3 class="process-card__name">Cure & Inspect</h3>
+        <p class="process-card__desc">Infrared-assisted initial cure followed by a full 24-hour ambient cure period. Final inspection under LED panels to verify uniform coverage, gloss depth, and hydrophobic response. We don't deliver until it's perfect.</p>
+        <span class="process-card__time">24-hour cure period</span>
+      </div>
+    </div>
+
+    <div class="section__inner" style="padding-top:2rem">
+      <span class="section-label surface-el">How long does it last?</span>
+      <h3 class="section-heading line-mask" style="font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:2.5rem"><span>Not all protection</span><span>is created equal.</span></h3>
+      <div class="protection">
+        <div class="protection__row">
+          <div class="protection__label">
+            <span class="protection__name">Carnauba Wax</span>
+            <span class="protection__years">3–6 months</span>
+          </div>
+          <div class="protection__bar"><div class="protection__fill protection__fill--wax"></div></div>
+        </div>
+        <div class="protection__row">
+          <div class="protection__label">
+            <span class="protection__name">Paint Sealant</span>
+            <span class="protection__years">1–2 years</span>
+          </div>
+          <div class="protection__bar"><div class="protection__fill protection__fill--seal"></div></div>
+        </div>
+        <div class="protection__row">
+          <div class="protection__label">
+            <span class="protection__name">Ceramic Coating</span>
+            <span class="protection__years">5+ years</span>
+          </div>
+          <div class="protection__bar"><div class="protection__fill protection__fill--ceramic"></div></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem" class="surface-el">
+        <a href="#contact" class="btn btn--primary magnetic">Protect Your Investment</a>
+      </div>
+    </div>
+  </div>
+  <div class="atmos atmos--2" aria-hidden="true"></div>
+</section>
+
+<!-- ===== WHY LUIS ===== -->
+<section class="section why" id="why">
+  <div class="section__inner">
+    <div class="why__grid">
+      <div class="why__image">
+        <img src="https://images.pexels.com/photos/8664307/pexels-photo-8664307.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luis performing paint correction under LED inspection lighting" loading="lazy" decoding="async">
+      </div>
+      <div class="why__content">
+        <span class="section-label surface-el">The craftsman</span>
+        <h2 class="section-heading line-mask"><span>Trained in precision.</span><span>Driven by obsession.</span></h2>
+
+        <div class="why__stats">
+          <div class="stat surface-el">
+            <div class="stat__number" data-count="10">0</div>
+            <div class="stat__label">Years in the industry</div>
+          </div>
+          <div class="stat surface-el">
+            <div class="stat__number" data-count="500">0</div>
+            <div class="stat__label">Vehicles detailed</div>
+          </div>
+          <div class="stat surface-el">
+            <div class="stat__number" style="color:var(--gold)">5.0</div>
+            <div class="stat__label">Average rating</div>
+          </div>
+          <div class="stat stat--accent surface-el">
+            <div class="stat__number">1</div>
+            <div class="stat__label">Obsession — perfection</div>
+          </div>
+        </div>
+
+        <div class="why__story surface-el">
+          <p>Luis trained inside one of Southern California's premier ceramic coating facilities — a 6,000-square-foot indoor operation with controlled environments, professional-grade inspection equipment, and System X accreditation. He didn't learn detailing from YouTube. He learned it under real lights, on real paint, from real masters.</p>
+          <p>Now he brings that precision to your driveway. Same products. Same techniques. Same obsessive attention to every panel, every edge, every reflection. The only difference? Your car never has to leave your sight.</p>
+        </div>
+
+        <ul class="why__list surface-el">
+          <li>System X ceramic coating trained & certified</li>
+          <li>Multi-stage paint correction under LED inspection</li>
+          <li>Full mobile setup — we bring everything to you</li>
+          <li>Weekend and evening availability</li>
+          <li>Pomona-based, serving the entire Inland Empire</li>
+        </ul>
+
+        <div class="atmos atmos--3" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="section reviews" id="reviews">
+  <div class="section__inner" style="text-align:center;margin-bottom:3rem">
+    <span class="section-label surface-el">What people say</span>
+    <h2 class="section-heading line-mask"><span>Don't take our word for it.</span></h2>
+  </div>
+  <div class="reviews__cards">
+    <div class="rev-card surface-el">
+      <div class="rev-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="rev-card__text">"Luis treated my M4 like it was his own. The paint correction alone was night and day — I didn't realize how bad the swirls were until I saw the difference. Ceramic coat on top? My car has never looked like this. Ever."</p>
+      <span class="rev-card__author">— Marcus R. · 2024 BMW M4</span>
+    </div>
+    <div class="rev-card surface-el">
+      <div class="rev-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="rev-card__text">"I've been through three different detailers in the IE and nobody comes close. Luis showed me every defect under the inspection light before starting, explained exactly what he'd do, and delivered beyond what he promised. Rare."</p>
+      <span class="rev-card__author">— Jennifer T. · 2023 Range Rover Sport</span>
+    </div>
+    <div class="rev-card surface-el">
+      <div class="rev-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="rev-card__text">"The fact that he comes to my house and does this level of work in my driveway is insane. I watched the whole process — 6 hours of meticulous work. The ceramic coating beads water like nothing I've ever seen. Worth every dollar."</p>
+      <span class="rev-card__author">— David M. · 2022 Porsche Cayenne</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section cta-section" id="contact">
+  <div class="cta-section__glow" aria-hidden="true"></div>
+  <div style="position:relative;z-index:2">
+    <span class="cta-section__label surface-el">Ready?</span>
+    <h2 class="cta-section__heading line-mask"><span>Your paint is waiting.</span></h2>
+    <p class="cta-section__sub surface-el">Luxury mobile detailing and ceramic coating, delivered to your driveway across the Inland Empire.</p>
+    <a href="tel:+19092368726" class="cta-section__phone">(909) 236-8726</a>
+    <div class="cta-section__btns surface-el">
+      <a href="tel:+19092368726" class="btn btn--primary magnetic">Call Now</a>
+      <a href="#services" class="btn btn--outline">View Services</a>
+    </div>
+    <p class="cta-section__areas surface-el">Pomona · Corona · Diamond Bar · Walnut · Claremont · Rancho Cucamonga · West Covina · Ontario</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <h4 class="footer__col-title">Services</h4>
+      <a href="#services" class="footer__link">Maintenance Wash</a>
+      <a href="#services" class="footer__link">Interior Detail</a>
+      <a href="#services" class="footer__link">Exterior Detail</a>
+      <a href="#services" class="footer__link">Paint Correction</a>
+      <a href="#ceramic" class="footer__link">Ceramic Coating</a>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Service Area</h4>
+      <a href="#" class="footer__link">Pomona, CA</a>
+      <a href="#" class="footer__link">Corona, CA</a>
+      <a href="#" class="footer__link">Diamond Bar, CA</a>
+      <a href="#" class="footer__link">Walnut, CA</a>
+      <a href="#" class="footer__link">Claremont, CA</a>
+      <a href="#" class="footer__link">Rancho Cucamonga, CA</a>
+      <a href="#" class="footer__link">West Covina, CA</a>
+      <a href="#" class="footer__link">Ontario, CA</a>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Contact</h4>
+      <a href="tel:+19092368726" class="footer__link">(909) 236-8726</a>
+      <span class="footer__link" style="cursor:default">3816 E Grand Ave, Pomona, CA 91766</span>
+      <span class="footer__link" style="cursor:default">Mon–Sun · 7am–7pm</span>
+      <a href="https://lmdgroupdetailing.com" class="footer__link" target="_blank" rel="noopener">lmdgroupdetailing.com</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2026 Luxury Mobile Detail. All rights reserved.</span>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#contact" class="sticky-cta__btn sticky-cta__btn--book">Get a Quote</a>
+  <a href="tel:+19092368726" class="sticky-cta__btn sticky-cta__btn--call">Call Now</a>
+</div>
+
+<!-- Lenis Smooth Scroll -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ===== REDUCED MOTION CHECK ===== */
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===== LENIS SMOOTH SCROLL ===== */
+  var lenis;
+  if (!prefersReduced && window.innerWidth > 768) {
+    lenis = new Lenis({
+      duration: 1.1,
+      easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* ===== CURSOR SPOTLIGHT ===== */
+  var spot = document.getElementById('spotlight');
+  if (spot && window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    var rafSpot = false;
+    document.addEventListener('mousemove', function(e) {
+      if (!rafSpot) {
+        rafSpot = true;
+        requestAnimationFrame(function() {
+          spot.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0) translate(-50%,-50%)';
+          rafSpot = false;
+        });
+      }
+    }, { passive: true });
+  }
+
+  /* ===== HERO OPENING SEQUENCE ===== */
+  var heroLine = document.getElementById('heroLine');
+  var heroContent = document.getElementById('heroContent');
+  var heroImg = document.getElementById('heroImg');
+  var heroOverlay = document.getElementById('heroOverlay');
+  var heroHeadline = document.getElementById('heroHeadline');
+
+  if (!prefersReduced && heroLine) {
+    var heroTL = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      onComplete: function() {
+        /* Clean up overlay after sequence */
+        if (heroOverlay) heroOverlay.style.pointerEvents = 'none';
+      }
+    });
+
+    heroTL
+      /* Gold line draws */
+      .to(heroLine, { width: '60vw', duration: 0.8, ease: 'power2.inOut' })
+      /* Bars split apart */
+      .to('.hero-bar--top', { yPercent: -100, duration: 1.0, ease: 'power3.inOut' }, 0.6)
+      .to('.hero-bar--bottom', { yPercent: 100, duration: 1.0, ease: 'power3.inOut' }, 0.6)
+      /* Gold line fades */
+      .to(heroLine, { opacity: 0, duration: 0.4 }, 1.2)
+      /* Image restores from grayscale */
+      .to(heroImg, {
+        filter: 'grayscale(0) brightness(1) saturate(1.1)',
+        duration: 1.4,
+        ease: 'power2.out'
+      }, 0.8)
+      /* Content surfaces */
+      .to(heroContent, { opacity: 1, duration: 0.01 }, 1.2)
+      /* Headline reveals (line mask) */
+      .add(function() {
+        if (heroHeadline) heroHeadline.classList.add('vis');
+      }, 1.3)
+      /* Sub/location/CTAs surface */
+      .to('.hero-sub', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.6)
+      .to('.hero-location', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.75)
+      .to('.hero-ctas', { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: 0.7 }, 1.9)
+      /* Overlay bars fully gone */
+      .to(heroOverlay, { autoAlpha: 0, duration: 0.5 }, 2.0);
+
+    /* Hero parallax on scroll */
+    gsap.to(heroImg, {
+      yPercent: 15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    /* Hero content fade on scroll */
+    gsap.to(heroContent, {
+      y: -60,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: '55% top',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+  } else {
+    /* Reduced motion: show everything immediately */
+    if (heroContent) heroContent.style.opacity = '1';
+    if (heroImg) heroImg.style.filter = 'none';
+    if (heroOverlay) heroOverlay.style.display = 'none';
+    if (heroHeadline) heroHeadline.classList.add('vis');
+    document.querySelectorAll('.hero .surface-el').forEach(function(el) {
+      el.classList.add('vis');
+    });
+  }
+
+  /* ===== INTERSECTION OBSERVER — SURFACE REVEALS ===== */
+  var surfaceEls = document.querySelectorAll('.surface-el');
+  var lineMasks = document.querySelectorAll('.line-mask:not(#heroHeadline)');
+  var atmosOrbs = document.querySelectorAll('.atmos');
+
+  if (!prefersReduced) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    surfaceEls.forEach(function(el) { revealObserver.observe(el); });
+    lineMasks.forEach(function(el) { revealObserver.observe(el); });
+    atmosOrbs.forEach(function(el) { revealObserver.observe(el); });
+  } else {
+    surfaceEls.forEach(function(el) { el.classList.add('vis'); });
+    lineMasks.forEach(function(el) { el.classList.add('vis'); });
+  }
+
+  /* ===== PROBLEM SECTION — STICKY IMAGE CROSSFADE ===== */
+  var problemItems = document.querySelectorAll('.problem__item');
+  var problemImgs = document.querySelectorAll('.problem__img');
+
+  if (problemItems.length && problemImgs.length) {
+    var problemObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = entry.target.getAttribute('data-trigger');
+          problemImgs.forEach(function(img) { img.classList.remove('active'); });
+          var target = document.querySelector('.problem__img[data-problem="' + idx + '"]');
+          if (target) target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    problemItems.forEach(function(item) { problemObserver.observe(item); });
+  }
+
+  /* ===== SERVICE CARDS — STICKY STACK + 3D TILT ===== */
+  var svcCards = document.querySelectorAll('.svc-card');
+
+  if (!prefersReduced && window.innerWidth > 768 && svcCards.length) {
+    /* Stack scaling via ScrollTrigger */
+    svcCards.forEach(function(card, i) {
+      if (i < svcCards.length - 1) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 12vh',
+          end: 'bottom 12vh',
+          scrub: 1,
+          onUpdate: function(self) {
+            var scale = 1 - (self.progress * 0.04);
+            var blur = self.progress * 1.5;
+            card.style.transform = 'scale(' + scale.toFixed(4) + ')';
+            card.style.filter = 'blur(' + blur.toFixed(2) + 'px)';
+          }
+        });
+      }
+    });
+
+    /* 3D tilt on hover */
+    svcCards.forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (y * -5).toFixed(2) + 'deg) scale3d(1.01,1.01,1)';
+        card.style.transition = 'none';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+        card.style.transition = 'transform 0.6s cubic-bezier(0.22,0.68,0,1)';
+      });
+    });
+  }
+
+  /* ===== COUNTER ANIMATION ===== */
+  var counters = document.querySelectorAll('[data-count]');
+
+  if (counters.length) {
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-count'));
+          var duration = 2000;
+          var start = performance.now();
+
+          function tick(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            /* ease-out cubic */
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased);
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target + '+';
+            }
+          }
+          requestAnimationFrame(tick);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(el) { counterObserver.observe(el); });
+  }
+
+  /* ===== MAGNETIC BUTTONS ===== */
+  if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+    document.querySelectorAll('.magnetic').forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - (rect.left + rect.width / 2);
+        var y = e.clientY - (rect.top + rect.height / 2);
+        btn.style.transform = 'translate3d(' + (x * 0.25).toFixed(1) + 'px,' + (y * 0.25).toFixed(1) + 'px,0)';
+        btn.style.transition = 'none';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = 'translate3d(0,0,0)';
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.22,0.68,0,1)';
+      });
+    });
+  }
+
+  /* ===== NAVIGATION SCROLL STATE ===== */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var navObserver = new IntersectionObserver(function(entries) {
+      nav.classList.toggle('scrolled', !entries[0].isIntersecting);
+    }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+    navObserver.observe(document.getElementById('hero') || document.body);
+  }
+
+  /* ===== MOBILE MENU ===== */
+  var burger = document.getElementById('burger');
+  var mobMenu = document.getElementById('mobMenu');
+
+  if (burger && mobMenu) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      mobMenu.classList.toggle('open');
+      document.body.style.overflow = mobMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    mobMenu.querySelectorAll('.mob-menu__link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        burger.classList.remove('open');
+        mobMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ===== STICKY MOBILE CTA ===== */
+  var stickyCta = document.getElementById('stickyCta');
+  if (stickyCta && window.innerWidth <= 768) {
+    var stickyObserver = new IntersectionObserver(function(entries) {
+      /* Show after scrolling past 50% of the page */
+      if (!entries[0].isIntersecting) {
+        stickyCta.classList.add('show');
+      }
+    }, { threshold: 0 });
+    /* Observe the transformation section as the trigger point */
+    var stickyTrigger = document.getElementById('transformation') || document.getElementById('services');
+    if (stickyTrigger) stickyObserver.observe(stickyTrigger);
+  }
+
+  /* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -80 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+})();
+</script>
+
+<!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Luxury Mobile Detail",
+  "description": "Premium mobile auto detailing, ceramic coating, and paint correction serving Pomona, Corona, and the Inland Empire.",
+  "image": "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "telephone": "+1-909-236-8726",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3816 E Grand Ave",
+    "addressLocality": "Pomona",
+    "addressRegion": "CA",
+    "postalCode": "91766",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0585,
+    "longitude": -117.7098
+  },
+  "url": "https://lmdgroupdetailing.com",
+  "openingHours": "Mo-Su 07:00-19:00",
+  "priceRange": "$$-$$$",
+  "areaServed": [
+    {"@type": "City", "name": "Pomona", "sameAs": "https://en.wikipedia.org/wiki/Pomona,_California"},
+    {"@type": "City", "name": "Corona"},
+    {"@type": "City", "name": "Diamond Bar"},
+    {"@type": "City", "name": "Walnut"},
+    {"@type": "City", "name": "Claremont"},
+    {"@type": "City", "name": "Rancho Cucamonga"},
+    {"@type": "City", "name": "West Covina"},
+    {"@type": "City", "name": "Ontario"},
+    {"@type": "City", "name": "Upland"},
+    {"@type": "City", "name": "Chino Hills"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Detailing Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Maintenance Wash"}, "priceSpecification": {"@type": "PriceSpecification", "price": "75", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Detail"}, "priceSpecification": {"@type": "PriceSpecification", "price": "200", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Exterior Detail"}, "priceSpecification": {"@type": "PriceSpecification", "price": "250", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Paint Correction"}, "priceSpecification": {"@type": "PriceSpecification", "price": "400", "priceCurrency": "USD"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ceramic Coating"}, "priceSpecification": {"@type": "PriceSpecification", "price": "800", "priceCurrency": "USD"}}
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5"
+  }
+}
+</script>
+</body>
+</html>
